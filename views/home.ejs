@@ -1,12 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Api Noticias</title>
+    <title>API de Notícias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        code {
+            background-color: #f9f9f9;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bem vindo a API Noticias</h1>
-    
+    <header>
+        <h1>API de Notícias</h1>
+        <p>Essa API permite realizar operações de CRUD em notícias armazenadas em um banco MongoDB Atlas.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Endpoints Disponíveis</h2>
+            <ul>
+                <li>
+                    <strong>GET /noticias</strong>
+                    <p>Retorna todas as notícias cadastradas no banco.</p>
+                </li>
+                <li>
+                    <strong>GET /noticias/id/:id</strong>
+                    <p>Retorna uma notícia específica pelo seu <strong>id</strong>.</p>
+                </li>
+                <li>
+                    <strong>GET /noticias/tiponoticia/:tipo</strong>
+                    <p>Retorna notícias filtradas por tipo de notícia (ex: "política", "esporte", etc.).</p>
+                </li>
+                <li>
+                    <strong>POST /postnoticias</strong>
+                    <p>Insere uma nova notícia no banco de dados. O corpo da requisição deve ser enviado no formato JSON:</p>
+                    <pre><code>{
+    "titulo": "Título da notícia",
+    "conteudo": "Conteúdo da notícia",
+    "tipo": "Tipo da notícia"
+}</code></pre>
+                </li>
+                <li>
+                    <strong>DELETE /delnoticias</strong>
+                    <p>Deleta uma notícia específica. O corpo da requisição deve conter o <strong>id</strong> da notícia:</p>
+                    <pre><code>{
+    "id": "id_da_noticia"
+}</code></pre>
+                </li>
+                <li>
+                    <strong>PUT /putnoticias</strong>
+                    <p>Atualiza uma notícia existente. O corpo da requisição deve conter os dados atualizados no formato JSON:</p>
+                    <pre><code>{
+    "id": "id_da_noticia",
+    "titulo": "Novo título da notícia",
+    "conteudo": "Novo conteúdo da notícia",
+    "tipo": "Novo tipo da notícia"
+}</code></pre>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 API de Notícias | Desenvolvido com ❤️</p>
+    </footer>
 </body>
 </html>
