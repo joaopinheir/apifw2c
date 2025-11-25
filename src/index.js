@@ -7,7 +7,7 @@ const port = 3000;
 app.set('view engine','ejs')
 app.set('views','./views')
 
-require("../rotas/dbconnect")(app)
+require("../db/dbconnect")(app)
 require("../rotas/home")(app)
 
 require("../rotas/getnoticias")(app)
