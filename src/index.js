@@ -16,7 +16,7 @@ require("../rotas/gettiponoticias")(app)
 
 require("../rotas/postnoticias")(app)
 require("../rotas/putnoticias")(app)
-require("../rotas/delnoticias")(app)
+require("../rotas/deltnoticias")(app)
 
 
 app.listen(port, () => {
